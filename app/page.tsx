@@ -5,6 +5,18 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-x-hidden relative">
+
+      <div className="neural-bg">
+  <div className="node top-[18%] left-[20%]"></div>
+  <div className="node top-[30%] left-[55%]"></div>
+  <div className="node top-[48%] left-[35%]"></div>
+  <div className="node top-[70%] left-[70%]"></div>
+  <div className="node top-[78%] left-[22%]"></div>
+
+  <div className="line top-[18.5%] left-[20.5%] w-[420px] rotate-[18deg]"></div>
+  <div className="line top-[30.5%] left-[55.5%] w-[260px] rotate-[130deg]"></div>
+  <div className="line top-[48.5%] left-[35.5%] w-[500px] rotate-[25deg]"></div>
+</div>
       {/* BACKGROUND FX */}
       <div className="scan-line"></div>
 
