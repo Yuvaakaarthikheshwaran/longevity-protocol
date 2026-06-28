@@ -4,89 +4,112 @@ import { motion } from "framer-motion";
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-[#050816] text-white">
-      {/* HERO */}
+    <main className="min-h-screen text-white overflow-x-hidden relative">
+      {/* SCREEN 1 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
         >
-          <h1 className="text-5xl md:text-8xl font-bold mb-6">
-            REAL WORLD <span className="gradient-text">EXPERIMENTS</span>
-          </h1>
+          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
+            CASE STUDIES
+          </p>
 
-          <p className="text-gray-400 max-w-4xl mx-auto text-lg md:text-2xl">
-            Longevity is no longer theory.
-            People are actively testing its limits.
+          <h1 className="text-5xl md:text-[7rem] font-black leading-tight">
+            REAL PEOPLE
+            <br />
+            <span className="gradient-text">REAL EXPERIMENTS</span>
+          </h1>
+        </motion.div>
+      </section>
+
+      {/* SCREEN 2 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            Longevity is no longer
+            <br />
+            theoretical.
+          </h2>
+
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto">
+            People are actively testing
+            <br />
+            human optimization.
           </p>
         </motion.div>
       </section>
 
-      {/* BRYAN */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto card-bg rounded-2xl p-12">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Bryan Johnson
+      {/* SCREEN 3 */}
+      <section className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-7xl w-full">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 gradient-text">
+            Case Studies
           </h2>
 
-          <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Bryan Johnson is one of the most extreme public longevity experiments.
-          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Bryan Johnson
+              </h3>
+              <p className="text-gray-400">
+                Aggressive biomarker tracking, supplements, sleep, and protocol optimization.
+              </p>
+            </div>
 
-          <p className="text-gray-400 leading-relaxed">
-            His protocol focuses on:
-            <br />• Sleep optimization
-            <br />• Biomarker obsession
-            <br />• Exercise
-            <br />• Precision nutrition
-            <br />• Supplements
-            <br /><br />
-            His approach is expensive and extreme.
-            But it proves something important:
-            biology can be aggressively measured and optimized.
-          </p>
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Blue Zones
+              </h3>
+              <p className="text-gray-400">
+                Long-lived populations with movement, community, and whole-food diets.
+              </p>
+            </div>
+
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Elite Athletes
+              </h3>
+              <p className="text-gray-400">
+                High VO₂ max, strength, recovery, and disciplined health practices.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* BLUE ZONES */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto card-bg rounded-2xl p-12">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Blue Zones
+      {/* SCREEN 4 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <h2 className="text-4xl md:text-7xl font-bold mb-8 text-red-400">
+            Key Lesson
           </h2>
 
-          <p className="text-gray-400 leading-relaxed">
-            Blue Zones are regions where people live unusually long lives.
-            <br /><br />
-            Common traits:
-            <br />• Daily movement
-            <br />• Strong social bonds
-            <br />• Low chronic stress
-            <br />• Mostly whole foods
-            <br />• Purpose-driven living
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            Longevity is not one thing.
+            <br />
+            It is systems working together.
           </p>
-        </div>
+        </motion.div>
       </section>
 
-      {/* ATHLETES */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto card-bg rounded-2xl p-12">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Elite Athletes
+      {/* SCREEN 5 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
+            OPTIMIZE
+            <br />
+            THE SYSTEM
           </h2>
 
-          <p className="text-gray-400 leading-relaxed">
-            Elite athletes demonstrate the power of:
-            <br />• high VO₂ max
-            <br />• strength
-            <br />• recovery
-            <br />• disciplined nutrition
-            <br /><br />
-            But excessive training can also create stress.
-            Optimization matters more than extremes.
+          <p className="text-gray-400 text-2xl">
+            not one variable.
           </p>
-        </div>
+        </motion.div>
       </section>
     </main>
   );
