@@ -1,84 +1,58 @@
-@import "tailwindcss";
-
-html {
-  scroll-behavior: smooth;
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(0, 140, 255, 0.18), transparent 25%),
-    radial-gradient(circle at 85% 15%, rgba(0, 255, 255, 0.12), transparent 25%),
-    radial-gradient(circle at 50% 85%, rgba(120, 0, 255, 0.08), transparent 30%),
-    #02030A;
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-* {
-  box-sizing: border-box;
+@keyframes scanMove {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
-::selection {
-  background: rgba(0, 217, 255, 0.25);
-  color: white;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #ffffff, #00d9ff, #6d7cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card-bg {
-  background: rgba(12, 18, 40, 0.72);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 217, 255, 0.12);
-  box-shadow:
-    0 0 20px rgba(0, 140, 255, 0.06),
-    inset 0 0 20px rgba(255,255,255,0.02);
-  transition: all 0.3s ease;
-}
-
-.card-bg:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 217, 255, 0.3);
-  box-shadow:
-    0 0 40px rgba(0, 217, 255, 0.12),
-    inset 0 0 20px rgba(255,255,255,0.03);
-}
-
-.glow {
-  box-shadow:
-    0 0 20px rgba(0, 217, 255, 0.2),
-    0 0 40px rgba(0, 217, 255, 0.1);
-}
-
-.primary-btn {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: white;
+.bg-orb {
+  position: absolute;
   border-radius: 9999px;
-  padding: 14px 32px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  filter: blur(90px);
+  animation: pulseGlow 6s infinite ease-in-out;
 }
 
-.primary-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(0, 217, 255, 0.35);
+.scan-line {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 217, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0,217,255,0.25);
+  animation: scanMove 6s linear infinite;
+  pointer-events: none;
+  z-index: 999;
 }
 
-.secondary-btn {
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.03);
-  color: white;
-  border-radius: 9999px;
-  padding: 14px 32px;
-  transition: all 0.3s ease;
-}
-
-.secondary-btn:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(0, 217, 255, 0.3);
+.float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
 }
