@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import NeuralBackground from "@/components/NeuralBackground";
+
 export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-x-hidden relative">
@@ -18,11 +20,8 @@ export default function Home() {
   <div className="line top-[48.5%] left-[35.5%] w-[500px] rotate-[25deg]"></div>
 </div>
       {/* BACKGROUND FX */}
-      <div className="scan-line"></div>
-
-      <div className="bg-orb fixed w-[300px] h-[300px] bg-cyan-500/20 top-[10%] left-[10%]"></div>
-      <div className="bg-orb fixed w-[260px] h-[260px] bg-blue-500/20 top-[50%] right-[10%]"></div>
-      <div className="bg-orb fixed w-[280px] h-[280px] bg-purple-500/20 bottom-[10%] left-[40%]"></div>
+      <NeuralBackground />
+<div className="scan-line"></div>
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
