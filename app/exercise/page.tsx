@@ -1,112 +1,125 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Dumbbell, Heart, Activity, Zap } from "lucide-react";
 
 export default function ExercisePage() {
-  const cards = [
-    {
-      title: "Strength Training",
-      description:
-        "Preserves muscle mass, strength, bone density, and metabolic health. One of the strongest anti-aging interventions.",
-      icon: Dumbbell,
-    },
-    {
-      title: "Cardio",
-      description:
-        "Improves cardiovascular health, circulation, and mitochondrial efficiency.",
-      icon: Heart,
-    },
-    {
-      title: "VO₂ Max",
-      description:
-        "One of the strongest predictors of longevity and all-cause mortality.",
-      icon: Activity,
-    },
-    {
-      title: "Power & Mobility",
-      description:
-        "Explosive movement and mobility preserve movement quality and reduce injury risk.",
-      icon: Zap,
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-[#050816] text-white">
-      {/* HERO */}
+    <main className="min-h-screen text-white overflow-x-hidden relative">
+      {/* SCREEN 1 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
         >
-          <h1 className="text-5xl md:text-8xl font-bold mb-6">
-            MOVEMENT IS <span className="gradient-text">SURVIVAL</span>
-          </h1>
+          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
+            EXERCISE
+          </p>
 
-          <p className="text-gray-400 max-w-4xl mx-auto text-lg md:text-2xl">
-            Your body adapts to what you demand from it. Strength, endurance,
-            power, and mobility determine how well you age.
+          <h1 className="text-5xl md:text-[7rem] font-black leading-tight">
+            MOVEMENT IS NOT OPTIONAL
+            <br />
+            <span className="gradient-text">IT IS BIOLOGY</span>
+          </h1>
+        </motion.div>
+      </section>
+
+      {/* SCREEN 2 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            Humans evolved
+            <br />
+            to move.
+          </h2>
+
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            Walk.
+            <br />
+            Lift.
+            <br />
+            Sprint.
+            <br />
+            Move.
           </p>
         </motion.div>
       </section>
 
-      {/* CORE PILLARS */}
-      <section className="py-24 px-6">
-        <h2 className="text-5xl font-bold text-center mb-16 gradient-text">
-          Core Exercise Pillars
-        </h2>
+      {/* SCREEN 3 */}
+      <section className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 gradient-text">
+            Core Systems
+          </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {cards.map((card, i) => {
-            const Icon = card.icon;
-            return (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="card-bg rounded-2xl p-8"
-              >
-                <Icon size={40} className="text-cyan-400 mb-4" />
-                <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
-                <p className="text-gray-400">{card.description}</p>
-              </motion.div>
-            );
-          })}
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Strength
+              </h3>
+              <p className="text-gray-400">
+                Builds muscle, bone density, power, and resilience.
+              </p>
+            </div>
+
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Cardio
+              </h3>
+              <p className="text-gray-400">
+                Improves heart health, VO₂ max, and endurance.
+              </p>
+            </div>
+
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Mobility
+              </h3>
+              <p className="text-gray-400">
+                Preserves movement quality, control, and injury resistance.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* WHY IT MATTERS */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto card-bg rounded-2xl p-10">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Why Exercise Matters
+      {/* SCREEN 4 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <h2 className="text-4xl md:text-7xl font-bold mb-8 text-red-400">
+            Inactivity
           </h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed">
-            Aging naturally reduces muscle mass, strength, cardiovascular
-            capacity, balance, and mobility. Exercise slows or even reverses
-            much of this decline.
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            Sedentary living increases:
+            <br />
+            Disease risk
+            <br />
+            Insulin resistance
+            <br />
+            Frailty
+            <br />
+            Early mortality
           </p>
-        </div>
+        </motion.div>
       </section>
 
-      {/* PROTOCOL */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto card-bg rounded-2xl p-10">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Practical Exercise Protocol
+      {/* SCREEN 5 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
+            TRAIN
+            <br />
+            TO SURVIVE
           </h2>
 
-          <ul className="space-y-4 text-lg text-gray-300">
-            <li>• Strength training 3–4x per week</li>
-            <li>• Zone 2 cardio 2–3x per week</li>
-            <li>• Intense cardio 1x per week</li>
-            <li>• Daily walking and movement</li>
-            <li>• Mobility work several times weekly</li>
-          </ul>
-        </div>
+          <p className="text-gray-400 text-2xl">
+            and thrive.
+          </p>
+        </motion.div>
       </section>
     </main>
   );
