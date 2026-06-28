@@ -1,27 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-
 import NeuralBackground from "@/components/NeuralBackground";
+import DNAHero from "@/components/DNAHero";
 
 export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-x-hidden relative">
-
-      <div className="neural-bg">
-  <div className="node top-[18%] left-[20%]"></div>
-  <div className="node top-[30%] left-[55%]"></div>
-  <div className="node top-[48%] left-[35%]"></div>
-  <div className="node top-[70%] left-[70%]"></div>
-  <div className="node top-[78%] left-[22%]"></div>
-
-  <div className="line top-[18.5%] left-[20.5%] w-[420px] rotate-[18deg]"></div>
-  <div className="line top-[30.5%] left-[55.5%] w-[260px] rotate-[130deg]"></div>
-  <div className="line top-[48.5%] left-[35.5%] w-[500px] rotate-[25deg]"></div>
-</div>
-      {/* BACKGROUND FX */}
       <NeuralBackground />
-<div className="scan-line"></div>
+      <div className="scan-line"></div>
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
@@ -36,7 +23,7 @@ export default function Home() {
       </nav>
 
       {/* SCREEN 1 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -46,23 +33,28 @@ export default function Home() {
             AEVUM
           </p>
 
-          <h1 className="text-5xl md:text-[8rem] font-black leading-tight float-slow">
+          <h1 className="text-5xl md:text-[8rem] font-black leading-tight mb-8">
             YOU ARE
             <br />
             <span className="gradient-text">BIOLOGICAL MACHINERY</span>
           </h1>
 
-          <p className="mt-8 text-gray-400 text-lg md:text-2xl">
+          <p className="mt-8 text-gray-400 text-lg md:text-2xl mb-12">
             Carbon became conscious.
             <br />
             Biology remained law.
           </p>
         </motion.div>
+
+        <DNAHero />
       </section>
 
       {/* SCREEN 2 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
-        <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
           <h2 className="text-4xl md:text-7xl font-bold mb-8">
             Most people think
             <br />
@@ -77,16 +69,21 @@ export default function Home() {
 
       {/* SCREEN 3 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
-        <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
           <h2 className="text-4xl md:text-7xl font-bold mb-8 gradient-text">
             Hidden disease
           </h2>
 
           <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
             Plaque can build silently.
-            <br /><br />
+            <br />
+            <br />
             Insulin resistance can develop silently.
-            <br /><br />
+            <br />
+            <br />
             Metabolic dysfunction can worsen silently.
           </p>
         </motion.div>
