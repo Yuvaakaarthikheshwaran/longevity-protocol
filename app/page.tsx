@@ -6,6 +6,12 @@ export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-x-hidden">
 
+      <div className="scan-line"></div>
+
+      <div className="bg-orb w-[300px] h-[300px] bg-cyan-500/20 top-[10%] left-[10%]"></div>
+      <div className="bg-orb w-[260px] h-[260px] bg-blue-500/20 top-[50%] right-[10%]"></div>
+      <div className="bg-orb w-[280px] h-[280px] bg-purple-500/20 bottom-[10%] left-[40%]"></div>
+
       {/* SCREEN 1 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
@@ -17,7 +23,7 @@ export default function Home() {
             AEVUM
           </p>
 
-          <h1 className="text-5xl md:text-8xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-9xl font-black leading-tight float-slow">
             YOU ARE
             <br />
             <span className="gradient-text">BIOLOGICAL MACHINERY</span>
