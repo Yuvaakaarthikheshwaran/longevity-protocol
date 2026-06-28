@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import NeuralBackground from "@/components/NeuralBackground";
-import DNAHero from "@/components/DNAHero";
+import Hero3D from "@/components/Hero3D";
 
 export default function Home() {
   return (
@@ -12,17 +12,18 @@ export default function Home() {
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold gradient-text">AEVUM</h1>
-          <div className="flex gap-6 text-sm md:text-base text-gray-300">
+
+          <div className="flex gap-6 text-gray-300">
             <a href="/philosophy">Philosophy</a>
-            <a href="/myths">Myths</a>
             <a href="/biomarkers">Biomarkers</a>
+            <a href="/myths">Myths</a>
           </div>
         </div>
       </nav>
 
-      {/* SCREEN 1 */}
+      {/* HERO */}
       <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -39,18 +40,18 @@ export default function Home() {
             <span className="gradient-text">BIOLOGICAL MACHINERY</span>
           </h1>
 
-          <p className="mt-8 text-gray-400 text-lg md:text-2xl mb-12">
+          <p className="text-gray-400 text-xl md:text-2xl max-w-4xl mx-auto mb-12">
             Carbon became conscious.
             <br />
             Biology remained law.
           </p>
         </motion.div>
 
-        <DNAHero />
+        <Hero3D />
       </section>
 
-      {/* SCREEN 2 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
+      {/* SECTION 2 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,8 +68,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SCREEN 3 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
+      {/* SECTION 3 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,80 +78,31 @@ export default function Home() {
             Hidden disease
           </h2>
 
-          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Plaque can build silently.
-            <br />
-            <br />
-            Insulin resistance can develop silently.
-            <br />
-            <br />
-            Metabolic dysfunction can worsen silently.
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto">
+            Plaque builds silently.
+            <br /><br />
+            Insulin resistance builds silently.
+            <br /><br />
+            Disease grows silently.
           </p>
         </motion.div>
       </section>
 
-      {/* CORE SYSTEMS */}
-      <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-16 gradient-text">
-            Core Systems
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              ["Sleep", "/sleep"],
-              ["Nutrition", "/nutrition"],
-              ["Exercise", "/exercise"],
-              ["Biomarkers", "/biomarkers"],
-              ["Supplements", "/supplements"],
-              ["Philosophy", "/philosophy"],
-            ].map(([name, link]) => (
-              <a
-                key={name}
-                href={link}
-                className="card-bg rounded-3xl p-10 text-2xl font-bold glow"
-              >
-                {name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* MYTHS */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <p className="text-red-400 text-xl tracking-[0.4em] mb-6">
-            WARNING
-          </p>
-
-          <h2 className="text-4xl md:text-7xl font-bold mb-8">
-            FALSE BELIEFS
-            <br />
-            DESTROY HEALTH
-          </h2>
-
-          <a href="/myths" className="primary-btn inline-block">
-            Break Myths
-          </a>
-        </motion.div>
-      </section>
-
-      {/* FINAL */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center relative z-10">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+      {/* SECTION 4 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0 }}>
           <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
             LONGEVITY BEGINS
             <br />
             WHEN BELIEF STOPS
           </h2>
 
-          <p className="text-gray-400 text-2xl mb-8">
+          <p className="text-gray-400 text-2xl mb-10">
             and reality starts.
           </p>
 
-          <a href="/philosophy" className="primary-btn inline-block">
-            Begin
+          <a href="/philosophy" className="primary-btn">
+            Enter AEVUM
           </a>
         </motion.div>
       </section>
