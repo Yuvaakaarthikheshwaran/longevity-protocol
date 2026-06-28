@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 
+import PageShell from "@/components/PageShell";
+
 export default function BiomarkersPage() {
   return (
-    <main className="min-h-screen text-white overflow-x-hidden relative">
+    <PageShell prev="/myths" next="/sleep">
       {/* SCREEN 1 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
