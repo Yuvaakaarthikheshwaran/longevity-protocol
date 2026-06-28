@@ -7,7 +7,7 @@ import {
   Pill,
   Activity,
   Brain,
-  Apple,
+  Leaf,
 } from "lucide-react";
 
 const pillars = [
