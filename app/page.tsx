@@ -9,6 +9,7 @@ import {
   Brain,
   Leaf,
   ShieldAlert,
+  ArrowRight,
 } from "lucide-react";
 
 export default function Home() {
@@ -23,61 +24,73 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#050816] text-white">
+    <main className="min-h-screen text-white">
+      {/* NAVBAR */}
+      <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/30 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+          <h1 className="text-3xl font-bold gradient-text">AEVUM</h1>
+
+          <div className="hidden md:flex gap-6 text-gray-300">
+            <a href="/philosophy">Philosophy</a>
+            <a href="/biomarkers">Biomarkers</a>
+            <a href="/myths">Myths</a>
+          </div>
+        </div>
+      </nav>
+
       {/* HERO */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 70 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          className="max-w-6xl"
         >
-          <h1 className="text-5xl md:text-8xl font-bold mb-6">
-            YOU ARE{" "}
-            <span className="gradient-text">BIOLOGICAL MACHINERY</span>
+          <p className="text-cyan-400 mb-6 tracking-[0.3em] uppercase">
+            Engineer Longevity
+          </p>
+
+          <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-tight">
+            YOU ARE <span className="gradient-text">BIOLOGICAL MACHINERY</span>
           </h1>
 
-          <p className="text-gray-400 max-w-4xl mx-auto text-lg md:text-2xl mb-10">
+          <p className="text-gray-400 max-w-4xl mx-auto text-lg md:text-2xl mb-10 leading-relaxed">
             Carbon became conscious.
             <br />
             Biology remained law.
             <br /><br />
-            Understand the machine. Delay the decay.
+            Understand the machine.
+            Delay the decay.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/philosophy"
-              className="px-8 py-4 bg-cyan-500 rounded-full font-semibold hover:bg-cyan-400 transition"
-            >
+            <a href="/philosophy" className="primary-btn">
               Start Journey
             </a>
 
-            <a
-              href="/myths"
-              className="px-8 py-4 border border-white/20 rounded-full font-semibold hover:bg-white/10 transition"
-            >
+            <a href="/myths" className="secondary-btn">
               Break Myths
             </a>
           </div>
         </motion.div>
       </section>
 
-      {/* INTRO */}
+      {/* PROBLEM */}
       <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto card-bg rounded-2xl p-12">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
+        <div className="max-w-6xl mx-auto card-bg rounded-3xl p-12">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 gradient-text">
             The Problem
           </h2>
 
-          <p className="text-gray-300 text-lg leading-relaxed">
+          <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
             Most people think health is visible.
             <br /><br />
-            It is not.
+            It isn’t.
             <br /><br />
-            You can look lean, muscular, and energetic while hidden disease grows.
+            You can look lean, muscular, and energetic while silent disease grows.
             Plaque can build in arteries.
-            Insulin resistance can develop silently.
-            Metabolic dysfunction can worsen without symptoms.
+            Insulin resistance can develop.
+            Metabolic dysfunction can worsen.
             <br /><br />
             Appearance can lie.
             Biology does not.
@@ -87,8 +100,8 @@ export default function Home() {
 
       {/* PILLARS */}
       <section className="py-24 px-6">
-        <h2 className="text-5xl font-bold text-center mb-16 gradient-text">
-          AEVUM Core Pillars
+        <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 gradient-text">
+          Core Pillars
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -101,31 +114,51 @@ export default function Home() {
                 key={pillar.name}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
-                className="card-bg rounded-2xl p-8 hover:scale-105 transition"
+                transition={{ delay: i * 0.07 }}
+                className="card-bg rounded-3xl p-8"
               >
-                <Icon size={40} className="text-cyan-400 mb-4" />
+                <Icon size={42} className="text-cyan-400 mb-5" />
                 <h3 className="text-2xl font-bold mb-4">{pillar.name}</h3>
-                <p className="text-gray-400">
+                <p className="text-gray-400 mb-5">
                   Explore {pillar.name.toLowerCase()} and its role in longevity.
                 </p>
+                <div className="flex items-center text-cyan-400 gap-2">
+                  Explore <ArrowRight size={18} />
+                </div>
               </motion.a>
             );
           })}
         </div>
       </section>
 
-      {/* QUOTE */}
+      {/* CASE STUDIES */}
       <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-8">
-            LONGEVITY BEGINS WHEN BELIEF STOPS
+        <div className="max-w-6xl mx-auto card-bg rounded-3xl p-12">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 gradient-text">
+            Real-World Experiments
           </h2>
 
-          <p className="text-gray-400 text-xl md:text-2xl">
-            and reality starts.
+          <p className="text-gray-300 text-lg leading-relaxed mb-8">
+            Longevity is no longer theoretical.
+            <br /><br />
+            Scientists, athletes, and public figures are actively pushing human optimization.
           </p>
+
+          <a href="/case-studies" className="primary-btn inline-block">
+            Explore Case Studies
+          </a>
         </div>
+      </section>
+
+      {/* FINAL */}
+      <section className="py-24 px-6 text-center">
+        <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-8">
+          LONGEVITY BEGINS WHEN BELIEF STOPS
+        </h2>
+
+        <p className="text-gray-400 text-xl md:text-2xl">
+          and reality starts.
+        </p>
       </section>
 
       {/* FOOTER */}
