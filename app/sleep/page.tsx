@@ -1,120 +1,119 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Moon, Brain, Clock3, ShieldCheck } from "lucide-react";
 
 export default function SleepPage() {
-  const sleepCards = [
-    {
-      title: "Deep Sleep",
-      description:
-        "This is when your body repairs tissue, builds muscle, restores hormones, and performs physical recovery.",
-      icon: Moon,
-    },
-    {
-      title: "REM Sleep",
-      description:
-        "Critical for memory, emotional processing, learning, creativity, and cognitive performance.",
-      icon: Brain,
-    },
-    {
-      title: "Circadian Rhythm",
-      description:
-        "Your internal clock controls melatonin, cortisol, temperature, energy, and sleep timing.",
-      icon: Clock3,
-    },
-    {
-      title: "Recovery",
-      description:
-        "Good sleep lowers disease risk, improves metabolism, and protects long-term brain health.",
-      icon: ShieldCheck,
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-[#050816] text-white">
-      {/* HERO */}
+    <main className="min-h-screen text-white overflow-x-hidden relative">
+      {/* SCREEN 1 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
         >
-          <h1 className="text-5xl md:text-8xl font-bold mb-6">
-            SLEEP IS NOT <span className="gradient-text">PASSIVE</span>
-          </h1>
+          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
+            SLEEP
+          </p>
 
-          <p className="text-gray-400 max-w-4xl mx-auto text-lg md:text-2xl">
-            While you sleep, your brain removes waste, your hormones rebalance,
-            your muscles recover, and your biology repairs itself.
+          <h1 className="text-5xl md:text-[7rem] font-black leading-tight">
+            SLEEP IS NOT REST
+            <br />
+            <span className="gradient-text">IT IS REPAIR</span>
+          </h1>
+        </motion.div>
+      </section>
+
+      {/* SCREEN 2 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            While you sleep,
+            <br />
+            biology works.
+          </h2>
+
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            Recovery happens.
+            <br />
+            Hormones rebalance.
+            <br />
+            Memory consolidates.
+            <br />
+            Damage gets repaired.
           </p>
         </motion.div>
       </section>
 
-      {/* WHY IT MATTERS */}
-      <section className="py-24 px-6">
-        <h2 className="text-5xl font-bold text-center mb-16 gradient-text">
-          Why Sleep Matters
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {sleepCards.map((card, i) => {
-            const Icon = card.icon;
-            return (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="card-bg rounded-2xl p-8"
-              >
-                <Icon size={40} className="text-cyan-400 mb-4" />
-                <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
-                <p className="text-gray-400">{card.description}</p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* SLEEP DEBT */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto card-bg rounded-2xl p-10">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Sleep Debt
+      {/* SCREEN 3 */}
+      <section className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 gradient-text">
+            Sleep Architecture
           </h2>
 
-          <p className="text-gray-400 text-lg mb-6">
-            You may feel adapted to sleeping 5–6 hours. Your biology does not.
-            Sleep deprivation compounds silently.
-          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">Deep Sleep</h3>
+              <p className="text-gray-400">
+                Physical recovery, tissue repair, growth hormone release.
+              </p>
+            </div>
 
-          <ul className="space-y-4 text-lg text-gray-300">
-            <li>• Reduced testosterone</li>
-            <li>• Higher insulin resistance</li>
-            <li>• Poor cognitive performance</li>
-            <li>• Increased cardiovascular risk</li>
-            <li>• Higher long-term neurodegeneration risk</li>
-          </ul>
-        </div>
-      </section>
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">REM</h3>
+              <p className="text-gray-400">
+                Memory consolidation, emotional processing, brain function.
+              </p>
+            </div>
 
-      {/* PROTOCOL */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto card-bg rounded-2xl p-10">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">
-            Practical Sleep Protocol
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6 text-gray-300 text-lg">
-            <div>✓ Sleep 7.5–9 hours daily</div>
-            <div>✓ Wake at consistent times</div>
-            <div>✓ Morning sunlight exposure</div>
-            <div>✓ Avoid late caffeine</div>
-            <div>✓ Keep room cool and dark</div>
-            <div>✓ Reduce night screen exposure</div>
+            <div className="card-bg rounded-3xl p-8">
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">Light Sleep</h3>
+              <p className="text-gray-400">
+                Transition state supporting overall sleep cycles.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* SCREEN 4 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <h2 className="text-4xl md:text-7xl font-bold mb-8 text-red-400">
+            Sleep Deprivation
+          </h2>
+
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            Poor sleep increases:
+            <br />
+            Insulin resistance
+            <br />
+            Cortisol
+            <br />
+            Hunger
+            <br />
+            Inflammation
+          </p>
+        </motion.div>
+      </section>
+
+      {/* SCREEN 5 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
+            SLEEP
+            <br />
+            BUILDS YOU
+          </h2>
+
+          <p className="text-gray-400 text-2xl">
+            every single night.
+          </p>
+        </motion.div>
       </section>
     </main>
   );
