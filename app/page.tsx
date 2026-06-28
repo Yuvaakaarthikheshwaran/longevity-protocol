@@ -1,174 +1,147 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Moon,
-  Dumbbell,
-  Pill,
-  Activity,
-  Brain,
-  Leaf,
-  ShieldAlert,
-  ArrowRight,
-} from "lucide-react";
 
 export default function Home() {
-  const pillars = [
-    { name: "Sleep", icon: Moon, href: "/sleep" },
-    { name: "Nutrition", icon: Leaf, href: "/nutrition" },
-    { name: "Exercise", icon: Dumbbell, href: "/exercise" },
-    { name: "Supplements", icon: Pill, href: "/supplements" },
-    { name: "Biomarkers", icon: Activity, href: "/biomarkers" },
-    { name: "Philosophy", icon: Brain, href: "/philosophy" },
-    { name: "Myths", icon: ShieldAlert, href: "/myths" },
-  ];
-
   return (
-    <main className="min-h-screen text-white">
-      {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/30 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-          <h1 className="text-3xl font-bold gradient-text">AEVUM</h1>
+    <main className="min-h-screen text-white overflow-x-hidden">
 
-          <div className="hidden md:flex gap-6 text-gray-300">
-            <a href="/philosophy">Philosophy</a>
-            <a href="/biomarkers">Biomarkers</a>
-            <a href="/myths">Myths</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* HERO */}
+      {/* SCREEN 1 */}
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="max-w-6xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
         >
-          <p className="text-cyan-400 mb-6 tracking-[0.3em] uppercase">
-            Engineer Longevity
+          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
+            AEVUM
           </p>
 
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-tight">
-            YOU ARE <span className="gradient-text">BIOLOGICAL MACHINERY</span>
-          </h1>
-
-          <p className="text-gray-400 max-w-4xl mx-auto text-lg md:text-2xl mb-10 leading-relaxed">
-            Carbon became conscious.
+          <h1 className="text-5xl md:text-8xl font-bold leading-tight">
+            YOU ARE
             <br />
-            Biology remained law.
-            <br /><br />
-            Understand the machine.
-            Delay the decay.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="/philosophy" className="primary-btn">
-              Start Journey
-            </a>
-
-            <a href="/myths" className="secondary-btn">
-              Break Myths
-            </a>
-          </div>
+            <span className="gradient-text">BIOLOGICAL MACHINERY</span>
+          </h1>
         </motion.div>
       </section>
 
-      {/* PROBLEM */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto card-bg rounded-3xl p-12">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 gradient-text">
-            The Problem
+      {/* SCREEN 2 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            Most people think
+            <br />
+            health is visible.
           </h2>
 
-          <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
-            Most people think health is visible.
-            <br /><br />
+          <p className="text-3xl md:text-6xl text-red-400 font-bold">
             It isn’t.
-            <br /><br />
-            You can look lean, muscular, and energetic while silent disease grows.
-            Plaque can build in arteries.
-            Insulin resistance can develop.
-            Metabolic dysfunction can worsen.
-            <br /><br />
-            Appearance can lie.
-            Biology does not.
           </p>
-        </div>
+        </motion.div>
       </section>
 
-      {/* PILLARS */}
-      <section className="py-24 px-6">
-        <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 gradient-text">
-          Core Pillars
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {pillars.map((pillar, i) => {
-            const Icon = pillar.icon;
-
-            return (
-              <motion.a
-                href={pillar.href}
-                key={pillar.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.07 }}
-                className="card-bg rounded-3xl p-8"
-              >
-                <Icon size={42} className="text-cyan-400 mb-5" />
-                <h3 className="text-2xl font-bold mb-4">{pillar.name}</h3>
-                <p className="text-gray-400 mb-5">
-                  Explore {pillar.name.toLowerCase()} and its role in longevity.
-                </p>
-                <div className="flex items-center text-cyan-400 gap-2">
-                  Explore <ArrowRight size={18} />
-                </div>
-              </motion.a>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* CASE STUDIES */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto card-bg rounded-3xl p-12">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 gradient-text">
-            Real-World Experiments
+      {/* SCREEN 3 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-bold mb-8 gradient-text">
+            Hidden disease
           </h2>
 
-          <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            Longevity is no longer theoretical.
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            Plaque can build silently.
             <br /><br />
-            Scientists, athletes, and public figures are actively pushing human optimization.
+            Insulin resistance can develop silently.
+            <br /><br />
+            Metabolic dysfunction can worsen silently.
           </p>
-
-          <a href="/case-studies" className="primary-btn inline-block">
-            Explore Case Studies
-          </a>
-        </div>
+        </motion.div>
       </section>
 
-      {/* FINAL */}
-      <section className="py-24 px-6 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-8">
-          LONGEVITY BEGINS WHEN BELIEF STOPS
-        </h2>
+      {/* SCREEN 4 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            Biology does not care
+            <br />
+            about belief.
+          </h2>
 
-        <p className="text-gray-400 text-xl md:text-2xl">
-          and reality starts.
-        </p>
+          <p className="text-gray-400 text-xl md:text-3xl">
+            It only responds to reality.
+          </p>
+        </motion.div>
       </section>
 
-      {/* FOOTER */}
-      <section className="py-16 px-6 border-t border-white/10">
+      {/* SCREEN 5 */}
+      <section className="min-h-screen flex items-center justify-center px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold gradient-text mb-4">AEVUM</h2>
-          <p className="text-gray-500">
-            Engineer longevity through truth, biology, and evidence.
-          </p>
+          <h2 className="text-5xl md:text-7xl font-bold mb-16 gradient-text">
+            Core Systems
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <a href="/sleep" className="card-bg rounded-3xl p-8 text-2xl font-bold">Sleep</a>
+            <a href="/nutrition" className="card-bg rounded-3xl p-8 text-2xl font-bold">Nutrition</a>
+            <a href="/exercise" className="card-bg rounded-3xl p-8 text-2xl font-bold">Exercise</a>
+            <a href="/biomarkers" className="card-bg rounded-3xl p-8 text-2xl font-bold">Biomarkers</a>
+            <a href="/supplements" className="card-bg rounded-3xl p-8 text-2xl font-bold">Supplements</a>
+            <a href="/philosophy" className="card-bg rounded-3xl p-8 text-2xl font-bold">Philosophy</a>
+          </div>
         </div>
+      </section>
+
+      {/* SCREEN 6 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <p className="text-red-400 text-xl tracking-[0.4em] mb-6">
+            WARNING
+          </p>
+
+          <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            FALSE BELIEFS
+            <br />
+            DESTROY HEALTH
+          </h2>
+
+          <a href="/myths" className="primary-btn inline-block">
+            Break Myths
+          </a>
+        </motion.div>
+      </section>
+
+      {/* SCREEN 7 */}
+      <section className="min-h-screen flex items-center justify-center px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
+            LONGEVITY BEGINS
+            <br />
+            WHEN BELIEF STOPS
+          </h2>
+
+          <p className="text-gray-400 text-2xl">
+            and reality starts.
+          </p>
+        </motion.div>
       </section>
     </main>
   );
