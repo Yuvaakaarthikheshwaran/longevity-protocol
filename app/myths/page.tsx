@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function MythsPage() {
+export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen text-white overflow-x-hidden relative">
       {/* SCREEN 1 */}
@@ -12,14 +12,14 @@ export default function MythsPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          <p className="text-red-400 tracking-[0.4em] uppercase mb-8">
-            WARNING
+          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
+            CASE STUDIES
           </p>
 
           <h1 className="text-5xl md:text-[7rem] font-black leading-tight">
-            FALSE BELIEFS
+            REAL PEOPLE
             <br />
-            <span className="gradient-text">DESTROY HEALTH</span>
+            <span className="gradient-text">REAL EXPERIMENTS</span>
           </h1>
         </motion.div>
       </section>
@@ -31,17 +31,15 @@ export default function MythsPage() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h2 className="text-4xl md:text-7xl font-bold mb-8">
-            Myth 1
+            Longevity is no longer
+            <br />
+            theoretical.
           </h2>
 
-          <p className="text-3xl md:text-5xl text-red-400 font-bold mb-8">
-            “I look healthy.”
-          </p>
-
-          <p className="text-xl md:text-3xl text-gray-400">
-            Appearance can lie.
+          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto">
+            People are actively testing
             <br />
-            Biology does not.
+            human optimization.
           </p>
         </motion.div>
       </section>
@@ -50,43 +48,34 @@ export default function MythsPage() {
       <section className="min-h-screen flex items-center justify-center px-6">
         <div className="max-w-7xl w-full">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 gradient-text">
-            Common False Beliefs
+            Case Studies
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-2xl font-bold mb-4 text-red-400">
-                Natural = Safe
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Bryan Johnson
               </h3>
               <p className="text-gray-400">
-                Arsenic is natural. Cyanide is natural.
+                Aggressive biomarker tracking, supplements, sleep, and protocol optimization.
               </p>
             </div>
 
             <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-2xl font-bold mb-4 text-red-400">
-                Artificial = Harmful
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Blue Zones
               </h3>
               <p className="text-gray-400">
-                Synthetic insulin saves lives.
+                Long-lived populations with movement, community, and whole-food diets.
               </p>
             </div>
 
             <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-2xl font-bold mb-4 text-red-400">
-                I’m Young
+              <h3 className="text-3xl font-bold mb-4 text-cyan-400">
+                Elite Athletes
               </h3>
               <p className="text-gray-400">
-                Damage compounds silently over decades.
-              </p>
-            </div>
-
-            <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-2xl font-bold mb-4 text-red-400">
-                I Feel Fine
-              </h3>
-              <p className="text-gray-400">
-                Symptoms often appear late.
+                High VO₂ max, strength, recovery, and disciplined health practices.
               </p>
             </div>
           </div>
@@ -97,13 +86,13 @@ export default function MythsPage() {
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
           <h2 className="text-4xl md:text-7xl font-bold mb-8 text-red-400">
-            The Dangerous Truth
+            Key Lesson
           </h2>
 
           <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Humans prefer comfort.
+            Longevity is not one thing.
             <br />
-            Biology only obeys reality.
+            It is systems working together.
           </p>
         </motion.div>
       </section>
@@ -112,13 +101,13 @@ export default function MythsPage() {
       <section className="min-h-screen flex items-center justify-center px-6 text-center">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
           <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
-            TRUTH
+            OPTIMIZE
             <br />
-            FIRST
+            THE SYSTEM
           </h2>
 
           <p className="text-gray-400 text-2xl">
-            comfort later.
+            not one variable.
           </p>
         </motion.div>
       </section>
