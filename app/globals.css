@@ -56,3 +56,33 @@
 .float-slow {
   animation: floatSlow 4s ease-in-out infinite;
 }
+@keyframes pulseNode {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+.neural-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(0, 217, 255, 0.8);
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.5);
+  animation: pulseNode 4s infinite ease-in-out;
+}
+
+.line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0,217,255,0.05), rgba(0,217,255,0.35));
+  transform-origin: left center;
+}
