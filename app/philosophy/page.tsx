@@ -1,114 +1,58 @@
 "use client";
 
-import { motion } from "framer-motion";
+import ScrollReveal from "@/components/ScrollReveal";
+import SectionShell from "@/components/SectionShell";
 
 export default function PhilosophyPage() {
   return (
-    <main className="min-h-screen text-white overflow-x-hidden relative">
-      {/* SCREEN 1 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
-            PHILOSOPHY
-          </p>
-
-          <h1 className="text-5xl md:text-[7rem] font-black leading-tight">
-            HUMANS EVOLVED
-            <br />
-            <span className="gradient-text">TO SURVIVE</span>
-          </h1>
-        </motion.div>
-      </section>
-
-      {/* SCREEN 2 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-4xl md:text-7xl font-bold mb-8">
-            Not to perceive
-            <br />
-            full reality.
-          </h2>
-
-          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Your senses are limited.
-            <br />
-            Your instincts are biased.
-            <br />
-            Your biology hides truth.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* SCREEN 3 */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-6xl w-full">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 gradient-text">
-            Reality
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-3xl font-bold mb-4 text-cyan-400">Cells</h3>
-              <p className="text-gray-400">
-                Every cell obeys chemistry.
+    <main className="relative min-h-screen overflow-x-hidden text-white">
+      <SectionShell>
+        <div className="grid min-h-[82vh] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <ScrollReveal>
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Philosophy</p>
+            <h1 className="text-5xl font-semibold tracking-[-0.08em] md:text-7xl">
+              HUMANS EVOLVED
+              <br />
+              <span className="gradient-text">TO SURVIVE.</span>
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="glass-panel rounded-[2.5rem] p-8">
+              <p className="text-xl leading-8 text-slate-300">
+                We do not believe perception is the same as truth. The senses are useful for survival, not complete understanding.
               </p>
             </div>
-
-            <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-3xl font-bold mb-4 text-cyan-400">Arteries</h3>
-              <p className="text-gray-400">
-                Every artery obeys physics.
-              </p>
-            </div>
-
-            <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-3xl font-bold mb-4 text-cyan-400">Body</h3>
-              <p className="text-gray-400">
-                Every system obeys biology.
-              </p>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* SCREEN 4 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <h2 className="text-4xl md:text-7xl font-bold mb-8 text-red-400">
-            Comfort Is Dangerous
-          </h2>
+      <SectionShell background="surface">
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            ["Reality", "Biology obeys laws whether we feel them or not."],
+            ["Systems", "Cells, arteries, hormones, and the brain are one integrated network."],
+            ["Measurement", "The fastest path to better health is precise observation."],
+          ].map(([title, description], index) => (
+            <ScrollReveal key={title} delay={index * 0.12}>
+              <div className="glass-panel rounded-[2rem] p-8">
+                <h3 className="text-3xl font-semibold text-sky-200">{title}</h3>
+                <p className="mt-4 text-slate-300">{description}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </SectionShell>
 
-          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Humans rationalize.
-            <br />
-            Humans delay.
-            <br />
-            Humans prefer comforting lies.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* SCREEN 5 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
-            LONGEVITY BEGINS
-            <br />
-            WITH TRUTH
-          </h2>
-
-          <p className="text-gray-400 text-2xl">
-            not comfort.
-          </p>
-        </motion.div>
-      </section>
+      <SectionShell>
+        <ScrollReveal>
+          <div className="text-center">
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Position</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              COMFORT IS NOT A HEALTH STRATEGY.
+            </h2>
+          </div>
+        </ScrollReveal>
+      </SectionShell>
     </main>
   );
 }

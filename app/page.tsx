@@ -1,111 +1,129 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Link from "next/link";
 import NeuralBackground from "@/components/NeuralBackground";
 import Hero3D from "@/components/Hero3D";
+import ScrollReveal from "@/components/ScrollReveal";
+import SectionShell from "@/components/SectionShell";
+
+const systemMetrics = [
+  { label: "ApoB", value: "85" },
+  { label: "HbA1c", value: "5.2%" },
+  { label: "hs-CRP", value: "0.7" },
+  { label: "VO₂ max", value: "52" },
+];
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-white overflow-x-hidden relative">
+    <main className="relative min-h-screen overflow-x-hidden text-white">
       <NeuralBackground />
-      <div className="scan-line"></div>
+      <div className="scan-line" />
 
-      {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold gradient-text">AEVUM</h1>
+      <section className="relative z-10 flex min-h-screen items-center px-6 pt-24">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <ScrollReveal delay={0.05}>
+              <p className="mb-6 text-sm uppercase tracking-[0.5em] text-sky-200/70">AEVERTINUS</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.16}>
+              <h1 className="text-5xl font-semibold leading-none tracking-[-0.08em] md:text-7xl lg:text-8xl">
+                YOU ARE NOT <span className="gradient-text">A PERSON.</span>
+                <br />
+                YOU ARE BIOLOGY.
+              </h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.28}>
+              <p className="mt-8 max-w-2xl text-lg text-slate-300 md:text-2xl">
+                Hidden biological reality is the only truth that matters. We expose it with precision instruments, data, and a clinical lens on every system.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Link href="/philosophy" className="primary-btn">
+                  Enter the system
+                </Link>
+                <Link href="/biomarkers" className="secondary-btn">
+                  View biomarkers
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
 
-          <div className="flex gap-6 text-gray-300">
-            <a href="/philosophy">Philosophy</a>
-            <a href="/biomarkers">Biomarkers</a>
-            <a href="/myths">Myths</a>
+          <ScrollReveal delay={0.2} className="glass-panel rounded-[2.5rem] p-6">
+            <Hero3D />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionShell id="signal" background="surface">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <ScrollReveal>
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Signal</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              Most disease is invisible before it becomes a diagnosis.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <p className="text-lg leading-8 text-slate-300">
+                Plaque accumulates. insulin resistance rises. inflammation lingers. The body shows patterns long before symptoms emerge.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                {systemMetrics.map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs uppercase tracking-[0.35em] text-sky-200/50">{item.label}</p>
+                    <p className="mt-2 text-3xl font-semibold">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </SectionShell>
+
+      <SectionShell background="default">
+        <div className="space-y-12">
+          <ScrollReveal>
+            <div className="text-center">
+              <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Biological systems</p>
+              <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+                A single operating system for the body.
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              ["Metabolism", "The energy economy that determines aging speed."],
+              ["Cardiovascular", "The pressure, lipids, and plaque dynamics inside the vessel wall."],
+              ["Inflammation", "A hidden driver of fatigue, damage, and disease progression."],
+              ["Recovery", "Sleep, repair, and hormonal renewal that determine resilience."],
+            ].map(([title, description], index) => (
+              <ScrollReveal key={title} delay={index * 0.08}>
+                <div className="glass-panel rounded-[2rem] p-6">
+                  <div className="mb-6 h-2 w-16 rounded-full bg-gradient-to-r from-sky-300 to-blue-500" />
+                  <h3 className="text-2xl font-semibold">{title}</h3>
+                  <p className="mt-4 text-slate-300">{description}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
-      </nav>
+      </SectionShell>
 
-      {/* HERO */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
-            AEVUM
-          </p>
-
-          <h1 className="text-5xl md:text-[8rem] font-black leading-tight mb-8">
-            YOU ARE
-            <br />
-            <span className="gradient-text">BIOLOGICAL MACHINERY</span>
-          </h1>
-
-          <p className="text-gray-400 text-xl md:text-2xl max-w-4xl mx-auto mb-12">
-            Carbon became conscious.
-            <br />
-            Biology remained law.
-          </p>
-        </motion.div>
-
-        <Hero3D />
-      </section>
-
-      {/* SECTION 2 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-4xl md:text-7xl font-bold mb-8">
-            Most people think
-            <br />
-            health is visible.
+      <SectionShell background="accent">
+        <ScrollReveal className="text-center">
+          <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Philosophy</p>
+          <h2 className="text-5xl font-semibold tracking-[-0.06em] md:text-7xl">
+            BIOLOGY DOES NOT NEGOTIATE.
           </h2>
-
-          <p className="text-3xl md:text-6xl text-red-400 font-bold">
-            It isn’t.
+          <p className="mx-auto mt-8 max-w-3xl text-lg text-slate-300 md:text-2xl">
+            Better decisions start with honest measurement.
           </p>
-        </motion.div>
-      </section>
-
-      {/* SECTION 3 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-4xl md:text-7xl font-bold mb-8 gradient-text">
-            Hidden disease
-          </h2>
-
-          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto">
-            Plaque builds silently.
-            <br /><br />
-            Insulin resistance builds silently.
-            <br /><br />
-            Disease grows silently.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* SECTION 4 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0 }}>
-          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
-            LONGEVITY BEGINS
-            <br />
-            WHEN BELIEF STOPS
-          </h2>
-
-          <p className="text-gray-400 text-2xl mb-10">
-            and reality starts.
-          </p>
-
-          <a href="/philosophy" className="primary-btn">
-            Enter AEVUM
-          </a>
-        </motion.div>
-      </section>
+          <Link href="/philosophy" className="primary-btn mt-10">
+            Explore the philosophy
+          </Link>
+        </ScrollReveal>
+      </SectionShell>
     </main>
   );
 }

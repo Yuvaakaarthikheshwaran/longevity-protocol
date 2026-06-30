@@ -1,135 +1,91 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-import PageShell from "@/components/PageShell";
+import BiomarkerDashboard from "@/components/BiomarkerDashboard";
+import HumanBody from "@/components/HumanBody";
+import PlaqueSimulation from "@/components/PlaqueSimulation";
+import ScrollReveal from "@/components/ScrollReveal";
+import SectionShell from "@/components/SectionShell";
 
 export default function BiomarkersPage() {
   return (
-    <PageShell prev="/myths" next="/sleep">
-      {/* SCREEN 1 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <p className="text-cyan-400 tracking-[0.4em] uppercase mb-8">
-            BIOMARKERS
-          </p>
-
-          <h1 className="text-5xl md:text-[7rem] font-black leading-tight">
-            YOU CANNOT SEE
-            <br />
-            <span className="gradient-text">INSIDE YOUR BODY</span>
-          </h1>
-        </motion.div>
-      </section>
-
-      {/* SCREEN 2 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-4xl md:text-7xl font-bold mb-8">
-            Symptoms appear late.
-          </h2>
-
-          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Disease usually starts silently.
-            <br />
-            Long before pain.
-            <br />
-            Long before symptoms.
-            <br />
-            Long before diagnosis.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* SCREEN 3 */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-7xl w-full">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 gradient-text">
-            Medical Dashboard
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="card-bg rounded-3xl p-8">
-              <p className="text-cyan-400 mb-3">ApoB</p>
-              <h3 className="text-4xl font-bold mb-4">85 mg/dL</h3>
-              <p className="text-gray-400">
-                Measures number of cholesterol particles capable of entering artery walls.
-              </p>
+    <main className="relative min-h-screen overflow-x-hidden text-white">
+      <SectionShell>
+        <div className="grid min-h-[80vh] items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
+          <ScrollReveal>
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Biomarkers</p>
+            <h1 className="text-5xl font-semibold tracking-[-0.08em] md:text-7xl">
+              YOU CANNOT SEE
+              <br />
+              <span className="gradient-text">INSIDE YOUR BODY</span>
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg text-slate-300 md:text-2xl">
+              The most important signals are the ones that appear before symptoms.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="glass-panel rounded-[2.5rem] p-8">
+              <HumanBody />
             </div>
-
-            <div className="card-bg rounded-3xl p-8">
-              <p className="text-cyan-400 mb-3">HbA1c</p>
-              <h3 className="text-4xl font-bold mb-4">5.2%</h3>
-              <p className="text-gray-400">
-                Estimates average blood glucose over ~3 months.
-              </p>
-            </div>
-
-            <div className="card-bg rounded-3xl p-8">
-              <p className="text-cyan-400 mb-3">Fasting Insulin</p>
-              <h3 className="text-4xl font-bold mb-4">6 μIU/mL</h3>
-              <p className="text-gray-400">
-                Shows how hard your body works to control glucose.
-              </p>
-            </div>
-
-            <div className="card-bg rounded-3xl p-8">
-              <p className="text-cyan-400 mb-3">hs-CRP</p>
-              <h3 className="text-4xl font-bold mb-4">0.7 mg/L</h3>
-              <p className="text-gray-400">
-                Marker of systemic inflammation.
-              </p>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* SCREEN 4 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-        >
-          <h2 className="text-4xl md:text-7xl font-bold mb-8 text-red-400">
-            Hidden Plaque
+      <SectionShell background="surface">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+          <ScrollReveal>
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Signal latency</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              Symptoms arrive late.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div className="glass-panel rounded-[2rem] p-8 text-slate-300">
+              <p className="text-xl leading-8">
+                Disease often begins silently. Plaque can accumulate. Insulin resistance can rise. Inflammation can stay hidden for years.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </SectionShell>
+
+      <SectionShell>
+        <ScrollReveal>
+          <div className="mb-12 text-center">
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Operating system</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              Medical dashboard
+            </h2>
+          </div>
+        </ScrollReveal>
+        <BiomarkerDashboard />
+      </SectionShell>
+
+      <SectionShell background="surface">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <ScrollReveal>
+            <PlaqueSimulation />
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Hidden plaque</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              The artery wall keeps score.
+            </h2>
+            <p className="mt-6 text-lg text-slate-300">
+              Atherosclerotic burden can accumulate quietly for decades. The body can be under stress long before there is pain, warning, or a clear crisis.
+            </p>
+          </ScrollReveal>
+        </div>
+      </SectionShell>
+
+      <SectionShell background="accent">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+          <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Truth before symptoms</p>
+          <h2 className="text-5xl font-semibold tracking-[-0.06em] md:text-7xl">
+            BIOMARKERS REVEAL THE REAL SYSTEM.
           </h2>
-
-          <p className="text-xl md:text-3xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Arteries can slowly accumulate plaque for decades.
-            <br />
-            No pain.
-            <br />
-            No warning.
-            <br />
-            Until catastrophe.
-          </p>
         </motion.div>
-      </section>
-
-      {/* SCREEN 5 */}
-      <section className="min-h-screen flex items-center justify-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-        >
-          <h2 className="text-5xl md:text-8xl font-bold gradient-text leading-tight mb-8">
-            BIOMARKERS
-            <br />
-            REVEAL TRUTH
-          </h2>
-
-          <p className="text-gray-400 text-2xl">
-            before symptoms do.
-          </p>
-        </motion.div>
-      </section>
+      </SectionShell>
     </main>
   );
 }
