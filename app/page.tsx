@@ -110,6 +110,35 @@ export default function Home() {
         </div>
       </SectionShell>
 
+      <SectionShell background="surface">
+        <div className="space-y-12">
+          <ScrollReveal>
+            <div className="text-center">
+              <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Protocol pillars</p>
+              <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+                The complete longevity operating system.
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              ["Nutrition", "/nutrition", "Food as biological information and metabolic signal."],
+              ["Exercise", "/exercise", "Strength, cardio, mobility, and long-term function."],
+              ["Sleep", "/sleep", "The repair phase that governs hormones, memory, and recovery."],
+              ["Supplements", "/supplements", "Evidence-based tools for the gaps that remain."],
+            ].map(([name, href, description], index) => (
+              <ScrollReveal key={name} delay={index * 0.08}>
+                <Link href={href} className="block rounded-[2rem] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:border-sky-200/30">
+                  <div className="mb-6 h-2 w-16 rounded-full bg-gradient-to-r from-sky-300 to-blue-500" />
+                  <h3 className="text-2xl font-semibold">{name}</h3>
+                  <p className="mt-4 text-slate-300">{description}</p>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </SectionShell>
+
       <SectionShell background="accent">
         <ScrollReveal className="text-center">
           <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Philosophy</p>

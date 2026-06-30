@@ -42,6 +42,31 @@ export default function SleepPage() {
           ))}
         </div>
       </SectionShell>
+
+      <SectionShell>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <ScrollReveal>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <h2 className="text-4xl font-semibold tracking-[-0.05em]">Sleep environment</h2>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>• Cool, dark, and quiet spaces improve sleep continuity and hormone regulation.</li>
+                <li>• Consistent sleep and wake times support circadian timing and energy stability.</li>
+                <li>• Reducing late caffeine, alcohol, and bright light protects deep sleep quality.</li>
+              </ul>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <h2 className="text-4xl font-semibold tracking-[-0.05em]">Why it matters</h2>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>• Better glucose control, appetite balance, and inflammation management.</li>
+                <li>• More stable mood, memory, and stress resilience throughout the day.</li>
+                <li>• More effective recovery from exercise, nutrition, and long-term stress.</li>
+              </ul>
+            </div>
+          </ScrollReveal>
+        </div>
+      </SectionShell>
     </main>
   );
 }

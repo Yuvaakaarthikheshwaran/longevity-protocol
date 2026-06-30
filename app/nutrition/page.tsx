@@ -29,9 +29,9 @@ export default function NutritionPage() {
       <SectionShell background="surface">
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            ["Protein", "Supports muscle, repair, enzyme function, and satiety."],
-            ["Fats", "Fuel for hormones, nerve signaling, and membrane integrity."],
-            ["Carbs", "The right amount supports training, recovery, and performance."],
+            ["Protein", "Supports muscle, repair, enzyme function, satiety, and tissue maintenance."],
+            ["Fats", "Fuel for hormones, nerve signaling, membrane integrity, and absorption."],
+            ["Carbs", "The right amount supports training, recovery, glycogen, and performance."],
           ].map(([title, description], index) => (
             <ScrollReveal key={title} delay={index * 0.1}>
               <div className="glass-panel rounded-[2rem] p-8">
@@ -40,6 +40,32 @@ export default function NutritionPage() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
+      </SectionShell>
+
+      <SectionShell>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <ScrollReveal>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <h2 className="text-4xl font-semibold tracking-[-0.05em]">Meal architecture</h2>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>• Prioritize protein at every meal to preserve lean mass and improve satiety.</li>
+                <li>• Build meals around whole foods, colorful vegetables, and minimally processed ingredients.</li>
+                <li>• Use fiber-rich carbs to stabilize glucose and improve gut health.</li>
+                <li>• Include healthy fats for hormones, nutrient absorption, and cellular resilience.</li>
+              </ul>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <h2 className="text-4xl font-semibold tracking-[-0.05em]">What to minimize</h2>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>• Ultra-processed foods with large amounts of added sugar and refined oils.</li>
+                <li>• Chronic overconsumption that drives insulin resistance and low-grade inflammation.</li>
+                <li>• A diet of extremes without enough vegetables, protein, and essential fats.</li>
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
       </SectionShell>
     </main>

@@ -42,6 +42,31 @@ export default function ExercisePage() {
           ))}
         </div>
       </SectionShell>
+
+      <SectionShell>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <ScrollReveal>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <h2 className="text-4xl font-semibold tracking-[-0.05em]">Weekly movement template</h2>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>• 2-4 strength sessions focusing on major movement patterns and progressive overload.</li>
+                <li>• 2-3 zones of zone 2 cardio for mitochondrial density and cardiovascular health.</li>
+                <li>• Daily mobility or walking to support circulation, posture, and recovery.</li>
+              </ul>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div className="glass-panel rounded-[2rem] p-8">
+              <h2 className="text-4xl font-semibold tracking-[-0.05em]">The payoff</h2>
+              <ul className="mt-6 space-y-4 text-slate-300">
+                <li>• Better insulin sensitivity and healthier body composition.</li>
+                <li>• Lower risk of cardiovascular disease and better longevity markers.</li>
+                <li>• Greater resilience, independence, and quality of life later in life.</li>
+              </ul>
+            </div>
+          </ScrollReveal>
+        </div>
+      </SectionShell>
     </main>
   );
 }
