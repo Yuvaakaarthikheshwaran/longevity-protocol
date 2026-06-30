@@ -10,7 +10,7 @@ type Props = {
   y?: number;
 };
 
-export default function ScrollReveal({ children, className = "", delay = 0, y = 40 }: Props) {
+export default function ScrollReveal({ children, className = "", delay = 0, y = 56 }: Props) {
   const variants: Variants = {
     hidden: { opacity: 0, y },
     visible: { opacity: 1, y: 0 },
@@ -20,9 +20,9 @@ export default function ScrollReveal({ children, className = "", delay = 0, y = 
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.72 }}
       variants={variants}
-      transition={{ duration: 0.7, delay, ease: "easeOut" }}
+      transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}

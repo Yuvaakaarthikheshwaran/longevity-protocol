@@ -2,28 +2,39 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 :root {
   color-scheme: dark;
-  --bg: #0b1120;
-  --surface: #111827;
+  --bg: #04070d;
+  --bg-soft: #0a101d;
+  --surface: #101827;
+  --surface-strong: #0a111d;
   --primary: #7dd3fc;
-  --secondary: #60a5fa;
-  --text: #f8fafc;
+  --primary-strong: #38bdf8;
+  --secondary: #93c5fd;
+  --text: #f8fbff;
   --muted: #94a3b8;
+  --muted-strong: #cbd5e1;
+  --border: rgba(125, 211, 252, 0.18);
 }
 
 body {
   margin: 0;
   padding: 0;
   color: var(--text);
-  font-family: var(--font-geist-sans), Inter, "Segoe UI", sans-serif;
+  font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   background:
-    radial-gradient(circle at 15% 20%, rgba(125, 211, 252, 0.12), transparent 20%),
-    radial-gradient(circle at 80% 15%, rgba(96, 165, 250, 0.16), transparent 18%),
-    radial-gradient(circle at 50% 85%, rgba(14, 165, 233, 0.08), transparent 24%),
-    #0b1120;
+    radial-gradient(circle at 15% 18%, rgba(125, 211, 252, 0.22), transparent 18%),
+    radial-gradient(circle at 82% 16%, rgba(56, 189, 248, 0.18), transparent 16%),
+    radial-gradient(circle at 54% 82%, rgba(14, 165, 233, 0.16), transparent 20%),
+    linear-gradient(180deg, #05070d 0%, #08111d 28%, #05070d 100%);
+}
+
+main,
+section {
+  scroll-snap-align: start;
 }
 
 * {
