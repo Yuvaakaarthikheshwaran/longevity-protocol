@@ -12,9 +12,9 @@ type Props = {
 export default function SectionShell({ children, id, className = "", background = "default" }: Props) {
   const backgroundClass =
     background === "surface"
-      ? "bg-[linear-gradient(180deg,rgba(15,23,42,0.58),rgba(10,14,25,0.22))]"
+      ? "bg-[linear-gradient(180deg,rgba(23,17,28,0.48),rgba(12,8,14,0.18))]"
       : background === "accent"
-      ? "bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.18),transparent_26%),linear-gradient(180deg,rgba(14,28,45,0.12),rgba(7,12,22,0.32))]"
+      ? "bg-[radial-gradient(circle_at_top,rgba(255,139,122,0.16),transparent_28%),linear-gradient(180deg,rgba(18,13,19,0.12),rgba(7,4,8,0.22))]"
       : "bg-transparent";
 
   return (
