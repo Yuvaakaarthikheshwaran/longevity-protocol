@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import BiomarkerDashboard from "@/components/BiomarkerDashboard";
 import HumanBody from "@/components/HumanBody";
+import PerformanceTrendChart from "@/components/PerformanceTrendChart";
 import PlaqueSimulation from "@/components/PlaqueSimulation";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionShell from "@/components/SectionShell";
@@ -59,6 +60,22 @@ export default function BiomarkersPage() {
           </div>
         </ScrollReveal>
         <BiomarkerDashboard />
+      </SectionShell>
+
+      <SectionShell background="surface">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <ScrollReveal>
+            <div>
+              <p className="mb-6 text-sm uppercase tracking-[0.45em] text-sky-200/70">Trend analysis</p>
+              <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+                Performance over time.
+              </h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <PerformanceTrendChart />
+          </ScrollReveal>
+        </div>
       </SectionShell>
 
       <SectionShell background="surface">
